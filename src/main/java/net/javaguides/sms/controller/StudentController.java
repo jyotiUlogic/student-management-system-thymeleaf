@@ -21,12 +21,12 @@ public class StudentController {
 	}
 	
 	// handler method to handle list students and return mode and view
-	@GetMapping("/students")
+	@GetMapping(value = {"/students", "/"})
 	public String listStudents(Model model) {
 		model.addAttribute("students", studentService.getAllStudents());
 		return "students";
 	}
-	
+
 	@GetMapping("/students/new")
 	public String createStudentForm(Model model) {
 		
