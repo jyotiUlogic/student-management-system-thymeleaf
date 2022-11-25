@@ -19,7 +19,13 @@ public class StudentController {
 		super();
 		this.studentService = studentService;
 	}
-	
+	//hello world app method
+	@GetMapping("/hello")
+	public String hello(Model model) {
+		model.addAttribute("message", "Hello World");
+		return "hello_world";
+	}
+
 	// handler method to handle list students and return mode and view
 	@GetMapping(value = {"/students", "/"})
 	public String listStudents(Model model) {
